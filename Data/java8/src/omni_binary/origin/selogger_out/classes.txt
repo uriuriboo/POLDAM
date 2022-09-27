@@ -1,0 +1,2 @@
+0,file:/root/selogger/src/omni_binary/origin/,Main,Main,Normal,eeb6a0bc4428c6fd87918b0668e0405c66732fa9,Loader@18b4aac2:Main
+1,file:/root/selogger/src/omni_binary/origin/,customClass/myMath,customClass/myMath,Normal,80a6e9ec17664c9d9cb321964eb002c6907302b3,Loader@18b4aac2:customClass/myMath
