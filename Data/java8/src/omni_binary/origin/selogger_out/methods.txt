@@ -1,3 +1,4 @@
+ClassID,MethodID,ClassName,MethodName,MethodDesc,Access,SourceFileName,MethodHash
 0,0,Main,<init>,()V,1,Main.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
 0,1,Main,main,([Ljava/lang/String;)V,9,Main.java,0a670c336661b6f511432cfab50c6f0c4de5c6b9
 1,2,customClass/myMath,<init>,()V,1,myMath.java,204b3c4dea2bb90b4b56dff35c6c2a032351043c
