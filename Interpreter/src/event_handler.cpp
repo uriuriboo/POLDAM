@@ -38,6 +38,31 @@ namespace POLDAM
         }
     }
 
+    SELOGGER_EVENT_ATTR getEventTypeAttr(const SELOGGER_EVENT_TYPE &eventType)
+    {
+        switch (eventType)
+        {
+
+        // READ ATTR
+        // Field Access
+        case SELOGGER_EVENT_TYPE::GET_INSTANCE_FIELD:
+        case SELOGGER_EVENT_TYPE::GET_INSTANCE_FIELD_RESULT:
+        case SELOGGER_EVENT_TYPE::GET_STATIC_FIELD:
+        case SELOGGER_EVENT_TYPE::LOCAL_LOAD:
+            return SELOGGER_EVENT_ATTR::READ_OBJECT_ATTR;
+
+            // WRITE ATTR
+        case SELOGGER_EVENT_TYPE::PUT_INSTANCE_FIELD:
+        case SELOGGER_EVENT_TYPE::PUT_INSTANCE_FIELD_VALUE:
+        case SELOGGER_EVENT_TYPE::PUT_INSTANCE_FIELD_BEFORE_INITIALIZATION:
+        case SELOGGER_EVENT_TYPE::PUT_STATIC_FIELD:
+        case SELOGGER_EVENT_TYPE::LOCAL_STORE:
+        case SELOGGER_EVENT_TYPE::LOCAL_INCREMENT:
+            return SELOGGER_EVENT_ATTR::WRITE_OBJECT_ATTR;
+        }
+        return SELOGGER_EVENT_ATTR::UNDEFINED;
+    }
+
     bool isPrimitiveType(const std::string &objectType)
     {
         return objectType.find("Ljava") == std::string::npos;

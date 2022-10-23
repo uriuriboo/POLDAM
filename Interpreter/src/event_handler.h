@@ -64,8 +64,9 @@ namespace POLDAM
 
     enum class SELOGGER_EVENT_ATTR
     {
-        WRITE_OBJECT,
-        READ_OBJECT,
+        WRITE_OBJECT_ATTR,
+        READ_OBJECT_ATTR,
+        UNDEFINED
     };
 
     SELOGGER_EVENT_TYPE getEventType(const std::string &log);
