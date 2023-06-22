@@ -27,4 +27,4 @@ function run (){
 
 export -f run
 
-seq 48 123 | xargs -I@ -P 5 -n1 bash -c "run @"
+seq 1 123 | xargs -I@ -P 5 -n1 bash -c "run @"
