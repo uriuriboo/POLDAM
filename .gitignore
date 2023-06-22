@@ -6,3 +6,4 @@ Boost/
 Data/*
 build/*
 CMakeFiles/*
+*boost*
