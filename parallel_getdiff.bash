@@ -19,7 +19,7 @@ function run (){
         for hash in "${hashes[@]}"; do
         echo origin=${origin}
         echo target=${target}
-        build/POLDAM -o ${origin} -t ${target} -d /data/selog-2023-yamaoka/pomdamlog2/${id}_${hash} --$hash
+        ./POLDAM -o ${origin} -t ${target} -d /data/selog-2023-yamaoka/pomdamlog/${id}_${hash} --$hash
         done
     fi
     
