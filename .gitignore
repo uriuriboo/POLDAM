@@ -2,8 +2,11 @@
 *.gch
 settings.json
 *.dot
+*.class
+
 Boost/
-Data/*
+Data/i49_bad_allocate/*
+Data/swan_selogger/*
 build/*
 CMakeFiles/*
 *boost*
