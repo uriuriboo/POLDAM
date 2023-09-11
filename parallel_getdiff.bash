@@ -19,7 +19,7 @@ function run (){
         for hash in "${hashes[@]}"; do
         echo origin=${origin}
         echo target=${target}
-        ./POLDAM -o ${origin} -t ${target} -d /data/selog-2023-yamaoka/pomdamlog/${id}_${hash} --$hash
+        build/POLDAM -o ${origin} -t ${target} -d /data/selog-2023-yamaoka/pomdamlog/${id}_${hash} --$hash
         done
     fi
     
@@ -27,8 +27,5 @@ function run (){
 
 export -f run
 
-<<<<<<< HEAD
-seq 1 13 | xargs -I@ -P 5 -n1 bash -c "run @"
-=======
+
 seq 1 123 | xargs -I@ -P 5 -n1 bash -c "run @"
->>>>>>> 実行トレースを取得する番号を変更

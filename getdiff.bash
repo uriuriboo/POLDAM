@@ -1,4 +1,3 @@
-# id=$1
 
 hashes=(
     flow
@@ -13,7 +12,7 @@ for id in $(seq 2 2);do
         target=/data/selog-2023-yamaoka/log/i-${id}n
         build/POLDAM -o ${origin} -t ${target} -d /data/selog-2023-yamaokapoldam_m/${id}_${hash}_m -m failOnUnknown --$hash
     done
-done
+done;
 
 echo origin=${origin}
 echo target=${target}
