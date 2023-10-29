@@ -16,3 +16,4 @@ Data/swan_selogger/*
 
 build/*
 CMakeFiles/*
+*boost*
