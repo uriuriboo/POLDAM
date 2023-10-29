@@ -3,8 +3,11 @@
 #include <stack>
 #include <functional>
 #include <iterator>
+// for construct a filterd graph
+#include <regex>
 
 #include "../../Util/include/src/poldam_config.hpp"
+#include "../../Util/include/src/poldam_util.h"
 
 #include <boost/graph/adjacency_iterator.hpp>
 #include <boost/graph/depth_first_search.hpp>
@@ -188,9 +191,15 @@ namespace POLDAM
 
         );
 
+        unsigned int incrementCounter ()
+        {
+            return this->counter++;
+        };
+        
         Graph g{};
         Graph diffGraph{};
-
+        unsigned int counter = 0;
+        
         boost::graph_traits<Graph>::vertex_descriptor Root;
 
         std::map<unsigned int, boost::graph_traits<Graph>::vertex_descriptor> root{};

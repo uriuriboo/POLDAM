@@ -12,21 +12,32 @@
 
 ## tree
 
-```
+```bash 
 .
+├── CMakeLists.txt
 ├── Data
-│   └── java8
-├── dockerfiles
-│   └── java8
+│   └── java8 #seloggerとサンプル用のjavaプログラム
+├── Doxyfile
+├── Doxyfile.bak
 ├── Graph
 │   └── src
 ├── Interpreter
 │   └── src
+├── Makefile
 ├── MetaFileParser
 │   ├── src
 │   └── test
-└── Util
-    └── include
+├── README.md
+├── Util
+│   └── include
+├── build
+├── docker-compose.yml
+├── dockerfiles
+│   ├── c++
+│   └── java8
+├── docs
+├── main.cpp
+└── poldam_sample.sh # サンプルのスクリプト
 ```
 
 ### Description
@@ -55,31 +66,23 @@
 
 Motivation Example を実行するための最低限のステップを以下に示します。
 
-1. Dependency を実行したい環境に用意してください
-2. CMakeLists.txt　内の`set(BOOST_PATH Boost/boost_1_80_0)` を適宜環境に併せて変更してください
+1. Dependency を実行したい環境に用意してください。
+2. CMakeLists.txt　内の`set(BOOST_PATH Boost/boost_1_80_0)` を適宜環境に併せて変更してください。
+3. (サンプルプログラム利用者向け)　`Data/java8m/motivationExample/build.sh`をjavaコンテナ内で実行してください。
   
 ```bash
-pwd # => /path/to/POLDAM
-#build ディレクトリの作成
-mkdir build
-# 作成したbuildディレクトリに移動
-cd build 
-# cmakeの実行
-cmake .. && make 
-# 以下のようなファイルが生成されていると成功
-ls 
-CMakeCache.txt  CMakeFiles  cmake_install.cmake  libmetafileParser.a  Makefile  POLDAM
+# ビルドとサンプルプログラムの実行を行うスクリプト
+$ sh poldam_sample.sh
 ```
 
-
 # Limitation
-
-- `-m` option is not supported. it is useful when you try to parse log that contain test framework (like JUnit). It will be supported soon.
+- The -c option specifies the class of the method; it has no effect when not used with the -m option.
+- When the -m option is used, it must be used in conjunction with -c, otherwise core dumping may occur or the system may not function properly.
+- When specifying a class with the `-c` option, use `package name` + `class name`. In this case, `.` in the package name should be replaced by `/`.
 - This script have been fully rewritten, hence, it's slightly different from the one I used in thesis.
 - Multithread is not supported.
 - Only `-omni` option is supported.
 - Object write instruction tracking is not supported.
-- Defects4j motivation will be added soon.
 
 # Coding Style
 
@@ -90,9 +93,6 @@ CMakeCache.txt  CMakeFiles  cmake_install.cmake  libmetafileParser.a  Makefile  
 | snake_case  | `file_name.cpp`                  |
 | SNAKE_CASE  | `#define`, `enum`, `namespace`   |
 
-# Roadmap
-- Unit testの追加
-- selogger最新版への追従
 
 ## Formatter
 
