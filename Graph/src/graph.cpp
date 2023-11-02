@@ -159,8 +159,8 @@ namespace POLDAM
             this->g[crtVertex].childParamHash +
             this->g[crtVertex].paramHash);
 
-        g[crtVertex].outputFormat += "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
-        
+        g[crtVertex].outputFormat += "\nFH=" + std::to_string(g[crtVertex].flowHash) + "\nPH=" + std::to_string(g[crtVertex].paramHash) + "\nCFH=" + std::to_string(g[crtVertex].controlFlowHash) + "\nCPH=" + std::to_string(g[crtVertex].controlParamHash);
+
         if(config.hasFilterdRegex)
         {
             // vertex をpopするときに、子孫の一つがtarget vertexなら、自分もtarget vertexにする
