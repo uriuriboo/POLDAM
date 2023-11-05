@@ -3,15 +3,32 @@ hashes=(
     flow
     param
 )
-id=2
-method="failOnUnknown"
-class="retrofit2/converter/moshi/MoshiConverterFactoryTest"
-flib="moshi"
+# id=2
+# method="failOnUnknown"
+# class="retrofit2/converter/moshi/MoshiConverterFactoryTest"
+# flib="moshi"
 
 # id=7
 # class="com/alibaba/druid/bvt/filter/log/Slf4jLogFilterTest"
 # method="test_slf4j"
-# flib="bind"
+# flib="slf4j"
+
+
+# id=49
+# class="com/intuit/wasabi/export/rest/impl/DefaultRestEndPointTest"
+# method="testGetRestEndPointURI"
+# flib="http"
+
+# id=114
+# class="org/jongo/spike/projection/JacksonProjectionTest"
+# method="canCreateQueryForPOJO"
+# flib="mongodb"
+
+
+id=87
+class="com/github/davidmoten/rx/jdbc/DatabaseTestBase"
+method="testReturnGeneratedKeysForMultipleInsertedValuesInOneStatement"
+flib="h2"
 
 for hash in "${hashes[@]}"; do
     origin=/data/selog-2023-yamaoka/log/i-${id}o
